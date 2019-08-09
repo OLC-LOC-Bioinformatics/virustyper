@@ -3,14 +3,8 @@ from setuptools import setup, find_packages
 import os
 setup(
     name="virus_typer",
-    version="0.0.0.1",
+    version="0.0.0.2",
     scripts=[os.path.join('virustyper', 'virustyper.py')],
-    data_files=[('primers',
-                 [os.path.join('virustyper', 'forward_typing_primers.fasta'),
-                  os.path.join('virustyper', 'reverse_typing_primers.fasta')
-                  ]),
-                'databases',
-                [os.path.join('virustyper', 'virus_typer_alleles.fasta')]],
     packages=find_packages(),
     include_package_data=True,
     author="Adam Koziol",
