@@ -7,7 +7,7 @@ import warnings
 import json
 import os
 
-# Import all the Biopython modulese
+# Import all the Biopython modules
 from Bio import BiopythonParserWarning, BiopythonWarning, SeqIO, Seq
 from Bio.SeqRecord import SeqRecord
 from Bio.Alphabet import IUPAC
@@ -41,7 +41,7 @@ class VirusTyping(object):
         # Glob and sort a list of all the paths to the .ab1 files
         file_list = sorted(glob(os.path.join(self.sequencepath, '*.ab1')), reverse=True)
         for seq_file in file_list:
-            # P19954_2019_VI482_11_GI_B03_M13-R17_E10_072.ab1
+            # P19954_2019FCP-0000034876-4_VI0364_22 _1D06_M13-R17_E11_087.ab1
             file_name = os.path.splitext(os.path.basename(seq_file))[0]
             # Create a metadata object for each sample
             sample = MetadataObject()
@@ -267,7 +267,7 @@ class VirusTyping(object):
         self.allele_database = os.path.join(self.homepath, 'virus_typer_alleles.fasta')
 
 
-def cli():
+def main():
     parser = ArgumentParser(description='Perform virus typing')
     parser.add_argument('-s', '--sequencepath',
                         required=True,
@@ -287,4 +287,4 @@ def cli():
 
 
 if __name__ == '__main__':
-    cli()
+    main()

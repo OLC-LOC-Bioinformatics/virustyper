@@ -72,7 +72,7 @@ class VirusTypeDB(object):
         self.allele_database = os.path.join(self.db_path, 'virus_typer_alleles.fasta')
 
 
-def cli():
+def main():
     parser = ArgumentParser(description='Perform virus typing')
     parser.add_argument('-db', '--dbpath',
                         required=True,
@@ -88,4 +88,4 @@ def cli():
 
 
 if __name__ == '__main__':
-    cli()
+    main()
